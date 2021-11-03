@@ -14,12 +14,12 @@ const useStyles = makeStyles({
 
 const MessageInputField = ({ name }) => {
     const classes = useStyles();
-    const avatarpath = gravatarPath(name);
+    const avatarPath = gravatarPath(name);
 
     return (<div className = {classes.root}>
         <Grid container>
             <Grid xs={1}>
-                <Avatar src={avatarpath}/>
+                <Avatar src={avatarPath}/>
             </Grid>
             <Grid xs={10}>入力</Grid>
             <Grid xs={1}>ボタン</Grid>

@@ -17,12 +17,8 @@ const MessageInputField = () => {
             <Grid xs={1}>
                 <Avatar/>
             </Grid>
-            <Grid xs={10}>
-                入力
-            </Grid>
-            <Grid xs={1}>
-                ボタン
-            </Grid>
+            <Grid xs={10}>入力</Grid>
+            <Grid xs={1}>ボタン</Grid>
         </Grid>
     </div>
     );

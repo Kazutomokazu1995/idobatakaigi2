@@ -20,7 +20,7 @@ const firebaseConfig = {
 
   firebase.initializeApp(firebaseConfig);
   const databese= firebase.database();
-  const messagesRef = databese.ref('messages');
+  export const messagesRef = databese.ref('messages');
 
 export  const pushMessage = ({name, text}) => {
     messagesRef.push({name, text});

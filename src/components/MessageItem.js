@@ -1,6 +1,5 @@
-import React from 'react';
+import React,{ useRef,useEffect } from 'react';
 import { ListItem,Typography,ListItemAvatar,Avatar,ListItemText} from '@material-ui/core';
-import { ClassNames } from '@emotion/react';
 import {makeStyles} from '@material-ui/core/styles'
 
 import { gravatarPath } from '../gravatar';
@@ -11,12 +10,19 @@ const useStyles = makeStyles(() => ({
     },
   }));
 
-const MessageItem = ({ name,text }) => {
-    const classes = useStyles();
-    const avatarPath = gravatarPath(name);
+const MessageItem = ({ isLastItem, name, text }) => {
+  const ref = useRef(null);
+  const classes = useStyles();
+  const avatarPath = gravatarPath(name);
+
+  useEffect(() => {
+    if(isLastItem) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  },[isLastItem]);
     
   return (
-    <ListItem divider={true}>
+    <ListItem divider={true} ref={ref}>
       <ListItemAvatar>
         <Avatar src={avatarPath} />
       </ListItemAvatar>
